@@ -9,9 +9,9 @@ namespace Let_code
             for (int i = 0; i < numbers.Length; i++)
             {
                 int complement = target - numbers[i];
-                if (numDict.TryGetValue(complement, out int value))
+                if (numDict.ContainsKey(complement))
                 {
-                    Console.WriteLine($"Key = {complement}, index(value) = {value}. Current index = {i}, current value = {numbers[i]}");
+                    Console.WriteLine($"Key = {complement}, index(value) = {numDict[complement]}. Current index = {i}, current value = {numbers[i]}");
                     return;
                 }
                 numDict[numbers[i]] = i;
@@ -20,23 +20,23 @@ namespace Let_code
             Console.WriteLine("No two sum solution");
         }
 
-        public static void FindTwoSum_TwoPointers(int[] numbers, int target)
+        public static void FindTwoSum_Ordered_TwoPointers(int[] numbers, int target)
         {
-            int i = 0;
-            int j = numbers.Length - 1;
-
-            while (i < j)
+            int leftPointer = 0;
+            int rightPointer = numbers.Length - 1;
+            
+            while (leftPointer < rightPointer)
             {
-                int sum = numbers[i] + numbers[j];
+                int sum = numbers[leftPointer] + numbers[rightPointer];
 
                 if(sum == target){
-                    Console.WriteLine($"Index i = {i} and j = {j}");
+                    Console.WriteLine($"Index i = {leftPointer} and j = {rightPointer}");
                     break;
                 }
                 else if(sum < target){
-                    i++;
+                    leftPointer++;
                 }else{
-                    j--;
+                    rightPointer--;
                 }
             }
         }
