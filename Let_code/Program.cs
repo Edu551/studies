@@ -14,4 +14,7 @@ int[][] matrix = [[1,2,3],[4,5,6],[7,8,9]];
 // RotateImage.Rotate(matrix);
 
 string[] strs = ["eat","tea","tan","ate","nat","bat"];
-GroupAnagrams.Group(strs);
+// GroupAnagrams.Group(strs);
+
+int[] height = [3,3,3,0,2,4,1,2];
+TrappingRainWater.Trap(height);
