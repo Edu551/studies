@@ -24,18 +24,22 @@ namespace Let_code
         {
             int leftPointer = 0;
             int rightPointer = numbers.Length - 1;
-            
+
             while (leftPointer < rightPointer)
             {
                 int sum = numbers[leftPointer] + numbers[rightPointer];
 
-                if(sum == target){
+                if (sum == target)
+                {
                     Console.WriteLine($"Index i = {leftPointer} and j = {rightPointer}");
                     break;
                 }
-                else if(sum < target){
+                else if (sum < target)
+                {
                     leftPointer++;
-                }else{
+                }
+                else
+                {
                     rightPointer--;
                 }
             }
