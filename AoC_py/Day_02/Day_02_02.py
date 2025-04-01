@@ -21,7 +21,7 @@ def compare(nums: list[int]) -> bool:
 
 def can_be_made_safe(nums: list[int]) -> bool:
     for i in range(len(nums)):
-        new_nums = nums[:i] + nums[i+1:]
+        new_nums = [x for j, x in enumerate(nums) if j != i]
         if compare(new_nums):
             return True
     return False
